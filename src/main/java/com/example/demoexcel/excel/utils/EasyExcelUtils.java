@@ -70,17 +70,10 @@ public class EasyExcelUtils {
             response.setHeader("Content-disposition", "attachment;filename*=utf-8''" + fileNameEncode + ".xlsx");
 
             // 使用 EasyExcel 写入数据到响应的输出流
-            // clazz 参数用于指定 Excel 文件的结构类
-            // sheetName 参数用于指定 Excel 文件中的工作表名称
              EasyExcel.write(response.getOutputStream(), clazz)
-//                     .registerWriteHandler(new CustomCellWriteHeightConfig())
-//                     .registerWriteHandler(new CustomCellWriteWidthConfig())
                      .autoCloseStream(true)
                      .sheet(sheetName)
                      .doWrite(list);
-
-
-
         } catch (Exception e) {
             e.printStackTrace();
         }

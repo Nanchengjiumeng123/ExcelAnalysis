@@ -4,6 +4,7 @@ import com.example.demoexcel.excel.entity.ExcelDTO;
 import com.example.demoexcel.excel.service.HandleExcelService;
 import com.example.demoexcel.excel.utils.EasyExcelUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,6 +21,7 @@ import java.util.List;
  * @date 2024/12/30 11:50
  */
 @RestController
+@CrossOrigin(origins = "http://localhost:8080")
 public class ExcelController {
 
     @Autowired
