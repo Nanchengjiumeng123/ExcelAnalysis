@@ -1,6 +1,7 @@
 package com.example.demoexcel.excel.controller;
 
 import com.example.demoexcel.excel.entity.ExcelDTO;
+import com.example.demoexcel.excel.entity.ExcelDTOTwo;
 import com.example.demoexcel.excel.service.HandleExcelService;
 import com.example.demoexcel.excel.utils.EasyExcelUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,8 +33,8 @@ public class ExcelController {
                      @RequestParam("file2") MultipartFile file2,
                      HttpServletResponse response){
         try {
-            List<ExcelDTO> list1 = EasyExcelUtils.readMultipartFile(file1.getInputStream(), ExcelDTO.class);
-            List<ExcelDTO> list2 = EasyExcelUtils.readMultipartFile(file2.getInputStream(), ExcelDTO.class);
+            List<ExcelDTO> list1 = EasyExcelUtils.readMultipartFile(file1.getInputStream(), ExcelDTO.class, 2);
+            List<ExcelDTOTwo> list2 = EasyExcelUtils.readMultipartFile(file2.getInputStream(), ExcelDTOTwo.class, 4);
 
             List<ExcelDTO> responseList = handleExcelService.handleExcel(list1, list2);
             EasyExcelUtils.export(response, "差集信息", "相关差集信息",responseList, ExcelDTO.class);

@@ -23,7 +23,7 @@ public class EasyExcelUtils {
      * @param <T>         泛型类型，表示数据对象的类型
      * @return 包含解析后数据对象的列表
      */
-    public static <T> List<T> readMultipartFile(InputStream inputStream, Class<T> clazz) {
+    public static <T> List<T> readMultipartFile(InputStream inputStream, Class<T> clazz, int number) {
         // 用于存储解析后的数据对象
         final List<T> dataList = new ArrayList<>();
 
@@ -38,7 +38,7 @@ public class EasyExcelUtils {
             public void doAfterAllAnalysed(AnalysisContext analysisContext) {
                 // 读取完成后可以进行一些操作
             }
-        }).headRowNumber(2).sheet().doRead();
+        }).headRowNumber(number).sheet().doRead();
 //        }).sheet().doRead();
 
         // 返回解析后数据对象的列表

@@ -13,96 +13,125 @@ import java.io.Serializable;
 public class ExcelDTO implements Serializable {
 
     //商品名称
-    @ExcelProperty("商品名称")
+    @ExcelProperty("*商品名称")
     @ColumnWidth(35)
     private String productName;
+    //商品名称
+    @ExcelProperty("通用名称")
+    @ColumnWidth(35)
+    private String productNameTongyong;
+
+    @ExcelProperty("一级分类")
+    @ColumnWidth(15)
+    private String yijifenlei;
+
+    @ExcelProperty("二级分类")
+    @ColumnWidth(15)
+    private String erjifenlei;
+    @ExcelProperty("供应商")
+    @ColumnWidth(15)
+    private String supplier;
+    //品牌名称
+    @ExcelProperty("品牌")
+    @ColumnWidth(15)
+    private String brandName;
+    //适合宠物类型
+    @ExcelProperty("适合宠物类型")
+    @ColumnWidth(15)
+    private String suit;
+
+    //条形码
+    @ExcelProperty("保质期")
+    @ColumnWidth(15)
+    private String baozhiqi;
     //条形码
     @ExcelProperty("条形码")
     @ColumnWidth(15)
     private String barCode;
-    //品牌名称
-    @ExcelProperty("品牌名称")
+    //条形码
+    @ExcelProperty("更多条形码")
     @ColumnWidth(15)
-    private String brandName;
+    private String moreBarCode;
     //规格型号
     @ExcelProperty("规格型号")
     @ColumnWidth(15)
     private String specifiModels;
-    //供应商
-    @ExcelProperty("供应商")
+    //规格型号
+    @ExcelProperty("单位")
     @ColumnWidth(15)
-    private String supplier;
+    private String unit;
     //批发价
     @ExcelProperty("批发价")
     @ColumnWidth(15)
     private String wholesalPrice;
+    //库存
+    @ExcelProperty("库存")
+    @ColumnWidth(15)
+    private String stockQuantity;
     //平均成本价
     @ExcelProperty("平均成本价")
     @ColumnWidth(15)
     private String averageCostPrice;
-    //库存数量
-    @ExcelProperty("库存数量")
-    @ColumnWidth(15)
-    private String stockQuantity;
-    //销售量
-    @ExcelProperty("销售量")
-    @ColumnWidth(15)
-    private String salesVolume;
-    //自用量
-    @ExcelProperty("自用量")
-    @ColumnWidth(15)
-    private String personalUse;
-    //报废量
-    @ExcelProperty("报废量")
-    @ColumnWidth(15)
-    private String scrapQuantity;
-    //赠送量
-    @ExcelProperty("赠送量")
-    @ColumnWidth(15)
-    private String giftAmount;
-    //盘亏量
-    @ExcelProperty("盘亏量")
-    @ColumnWidth(15)
-    private String lossAmount;
-    //盘盈量
-    @ExcelProperty("盘盈量")
-    @ColumnWidth(15)
-    private String profitVolume;
-    //拆散量
-    @ExcelProperty("拆散量")
-    @ColumnWidth(15)
-    private String dismantlingAmount;
-    //其他出库量
-    @ExcelProperty("其他出库量")
-    @ColumnWidth(15)
-    private String otherOutboundQuantities;
-    //退货
-    @ExcelProperty("退货")
-    @ColumnWidth(15)
-    private String returnTheGoods;
-    //调拨出库
-    @ExcelProperty("调拨出库")
-    @ColumnWidth(15)
-    private String transferOutOfWarehouse;
-    //积分兑换
-    @ExcelProperty("积分兑换")
-    @ColumnWidth(15)
-    private String pointsRedemption;
 
-    // 重写 equals 方法
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true; // 引用相等
-        if (!(o instanceof ExcelDTO)) return false; // 类型检查
-        ExcelDTO myEntity = (ExcelDTO) o;
-        return productName != null ? productName.equals(myEntity.productName) : myEntity.productName == null; // 根据 name 比较
-    }
+    @ExcelProperty("零售价")
+    @ColumnWidth(15)
+    private String lingshouujia;
 
-    // 重写 hashCode 方法
-    @Override
-    public int hashCode() {
-        return productName != null ? productName.hashCode() : 0; // 根据 name 生成 hashCode
-    }
+    @ExcelProperty("会员价")
+    @ColumnWidth(15)
+    private String huiyuanjia;
+
+    @ExcelProperty("是否支持负库存销售")
+    @ColumnWidth(15)
+    private String kucunxiaoshou;
+
+    @ExcelProperty("库存预警数")
+    @ColumnWidth(15)
+    private String kucunyujing;
+
+    @ExcelProperty("是否参与会员打折")
+    @ColumnWidth(15)
+    private String huiyuandazhe;
+
+    @ExcelProperty("是否复购提醒")
+    @ColumnWidth(15)
+    private String shifoufugou;
+
+    @ExcelProperty("重量")
+    @ColumnWidth(15)
+    private String zhongliang;
+
+    @ExcelProperty("药品分类(处方药/非处方药)")
+    @ColumnWidth(15)
+    private String yaowufenlei;
+
+    @ExcelProperty("投药单位")
+    @ColumnWidth(15)
+    private String touyao;
+
+    @ExcelProperty("1库存单位等于投药单位数")
+    @ColumnWidth(15)
+    private String nihao;
+
+    @ExcelProperty("用法")
+    @ColumnWidth(15)
+    private String yongfa;
+
+    @ExcelProperty("药物信息")
+    @ColumnWidth(15)
+    private String yaowu;
+
+    @ExcelProperty("生产厂商")
+    @ColumnWidth(15)
+    private String shengchan;
+
+    @ExcelProperty("批准文号")
+    @ColumnWidth(15)
+    private String pizhun;
+
+    @ExcelProperty("备注")
+    @ColumnWidth(15)
+    private String remark;
 
 
     public String getProductName() {
@@ -113,28 +142,28 @@ public class ExcelDTO implements Serializable {
         this.productName = productName;
     }
 
-    public String getBarCode() {
-        return barCode;
+    public String getProductNameTongyong() {
+        return productNameTongyong;
     }
 
-    public void setBarCode(String barCode) {
-        this.barCode = barCode;
+    public void setProductNameTongyong(String productNameTongyong) {
+        this.productNameTongyong = productNameTongyong;
     }
 
-    public String getBrandName() {
-        return brandName;
+    public String getYijifenlei() {
+        return yijifenlei;
     }
 
-    public void setBrandName(String brandName) {
-        this.brandName = brandName;
+    public void setYijifenlei(String yijifenlei) {
+        this.yijifenlei = yijifenlei;
     }
 
-    public String getSpecifiModels() {
-        return specifiModels;
+    public String getErjifenlei() {
+        return erjifenlei;
     }
 
-    public void setSpecifiModels(String specifiModels) {
-        this.specifiModels = specifiModels;
+    public void setErjifenlei(String erjifenlei) {
+        this.erjifenlei = erjifenlei;
     }
 
     public String getSupplier() {
@@ -145,20 +174,68 @@ public class ExcelDTO implements Serializable {
         this.supplier = supplier;
     }
 
+    public String getBrandName() {
+        return brandName;
+    }
+
+    public void setBrandName(String brandName) {
+        this.brandName = brandName;
+    }
+
+    public String getSuit() {
+        return suit;
+    }
+
+    public void setSuit(String suit) {
+        this.suit = suit;
+    }
+
+    public String getBaozhiqi() {
+        return baozhiqi;
+    }
+
+    public void setBaozhiqi(String baozhiqi) {
+        this.baozhiqi = baozhiqi;
+    }
+
+    public String getBarCode() {
+        return barCode;
+    }
+
+    public void setBarCode(String barCode) {
+        this.barCode = barCode;
+    }
+
+    public String getMoreBarCode() {
+        return moreBarCode;
+    }
+
+    public void setMoreBarCode(String moreBarCode) {
+        this.moreBarCode = moreBarCode;
+    }
+
+    public String getSpecifiModels() {
+        return specifiModels;
+    }
+
+    public void setSpecifiModels(String specifiModels) {
+        this.specifiModels = specifiModels;
+    }
+
+    public String getUnit() {
+        return unit;
+    }
+
+    public void setUnit(String unit) {
+        this.unit = unit;
+    }
+
     public String getWholesalPrice() {
         return wholesalPrice;
     }
 
     public void setWholesalPrice(String wholesalPrice) {
         this.wholesalPrice = wholesalPrice;
-    }
-
-    public String getAverageCostPrice() {
-        return averageCostPrice;
-    }
-
-    public void setAverageCostPrice(String averageCostPrice) {
-        this.averageCostPrice = averageCostPrice;
     }
 
     public String getStockQuantity() {
@@ -169,91 +246,131 @@ public class ExcelDTO implements Serializable {
         this.stockQuantity = stockQuantity;
     }
 
-    public String getSalesVolume() {
-        return salesVolume;
+    public String getAverageCostPrice() {
+        return averageCostPrice;
     }
 
-    public void setSalesVolume(String salesVolume) {
-        this.salesVolume = salesVolume;
+    public void setAverageCostPrice(String averageCostPrice) {
+        this.averageCostPrice = averageCostPrice;
     }
 
-    public String getPersonalUse() {
-        return personalUse;
+    public String getLingshouujia() {
+        return lingshouujia;
     }
 
-    public void setPersonalUse(String personalUse) {
-        this.personalUse = personalUse;
+    public void setLingshouujia(String lingshouujia) {
+        this.lingshouujia = lingshouujia;
     }
 
-    public String getScrapQuantity() {
-        return scrapQuantity;
+    public String getHuiyuanjia() {
+        return huiyuanjia;
     }
 
-    public void setScrapQuantity(String scrapQuantity) {
-        this.scrapQuantity = scrapQuantity;
+    public void setHuiyuanjia(String huiyuanjia) {
+        this.huiyuanjia = huiyuanjia;
     }
 
-    public String getGiftAmount() {
-        return giftAmount;
+    public String getKucunxiaoshou() {
+        return kucunxiaoshou;
     }
 
-    public void setGiftAmount(String giftAmount) {
-        this.giftAmount = giftAmount;
+    public void setKucunxiaoshou(String kucunxiaoshou) {
+        this.kucunxiaoshou = kucunxiaoshou;
     }
 
-    public String getLossAmount() {
-        return lossAmount;
+    public String getKucunyujing() {
+        return kucunyujing;
     }
 
-    public void setLossAmount(String lossAmount) {
-        this.lossAmount = lossAmount;
+    public void setKucunyujing(String kucunyujing) {
+        this.kucunyujing = kucunyujing;
     }
 
-    public String getProfitVolume() {
-        return profitVolume;
+    public String getHuiyuandazhe() {
+        return huiyuandazhe;
     }
 
-    public void setProfitVolume(String profitVolume) {
-        this.profitVolume = profitVolume;
+    public void setHuiyuandazhe(String huiyuandazhe) {
+        this.huiyuandazhe = huiyuandazhe;
     }
 
-    public String getDismantlingAmount() {
-        return dismantlingAmount;
+    public String getShifoufugou() {
+        return shifoufugou;
     }
 
-    public void setDismantlingAmount(String dismantlingAmount) {
-        this.dismantlingAmount = dismantlingAmount;
+    public void setShifoufugou(String shifoufugou) {
+        this.shifoufugou = shifoufugou;
     }
 
-    public String getOtherOutboundQuantities() {
-        return otherOutboundQuantities;
+    public String getZhongliang() {
+        return zhongliang;
     }
 
-    public void setOtherOutboundQuantities(String otherOutboundQuantities) {
-        this.otherOutboundQuantities = otherOutboundQuantities;
+    public void setZhongliang(String zhongliang) {
+        this.zhongliang = zhongliang;
     }
 
-    public String getReturnTheGoods() {
-        return returnTheGoods;
+    public String getYaowufenlei() {
+        return yaowufenlei;
     }
 
-    public void setReturnTheGoods(String returnTheGoods) {
-        this.returnTheGoods = returnTheGoods;
+    public void setYaowufenlei(String yaowufenlei) {
+        this.yaowufenlei = yaowufenlei;
     }
 
-    public String getTransferOutOfWarehouse() {
-        return transferOutOfWarehouse;
+    public String getTouyao() {
+        return touyao;
     }
 
-    public void setTransferOutOfWarehouse(String transferOutOfWarehouse) {
-        this.transferOutOfWarehouse = transferOutOfWarehouse;
+    public void setTouyao(String touyao) {
+        this.touyao = touyao;
     }
 
-    public String getPointsRedemption() {
-        return pointsRedemption;
+    public String getNihao() {
+        return nihao;
     }
 
-    public void setPointsRedemption(String pointsRedemption) {
-        this.pointsRedemption = pointsRedemption;
+    public void setNihao(String nihao) {
+        this.nihao = nihao;
+    }
+
+    public String getYongfa() {
+        return yongfa;
+    }
+
+    public void setYongfa(String yongfa) {
+        this.yongfa = yongfa;
+    }
+
+    public String getYaowu() {
+        return yaowu;
+    }
+
+    public void setYaowu(String yaowu) {
+        this.yaowu = yaowu;
+    }
+
+    public String getShengchan() {
+        return shengchan;
+    }
+
+    public void setShengchan(String shengchan) {
+        this.shengchan = shengchan;
+    }
+
+    public String getPizhun() {
+        return pizhun;
+    }
+
+    public void setPizhun(String pizhun) {
+        this.pizhun = pizhun;
+    }
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
     }
 }
